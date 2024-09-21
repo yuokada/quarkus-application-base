@@ -161,7 +161,9 @@
         <developerConnection>scm:git:git@github.com:yuokada/quarkus-application-base.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
+
     <distributionManagement>
+        <!--
         <snapshotRepository>
             <id>github-snapshot</id>
             <url>https://maven.pkg.github.com/yuokada/quarkus-application-base</url>
@@ -169,6 +171,7 @@
                 <enabled>true</enabled>
             </snapshots>
         </snapshotRepository>
+        -->
         <repository>
             <id>github</id>
             <url>https://maven.pkg.github.com/yuokada/quarkus-application-base</url>
