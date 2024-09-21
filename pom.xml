@@ -116,6 +116,13 @@
         </plugins>
     </build>
 
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <url>https://maven.pkg.github.com/yuokada/quarkus-application-base</url>
+        </repository>
+    </distributionManagement>
+
     <profiles>
         <profile>
             <id>native</id>
