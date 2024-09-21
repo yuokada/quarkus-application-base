@@ -12,6 +12,7 @@ on:
   # release:
   #   types: [created]
   push:
+    branches: [ "master" ]
     tags:
       - v0.**
       - 0.**
