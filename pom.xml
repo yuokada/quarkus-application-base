@@ -28,6 +28,10 @@
         <quarkus.platform.version>3.20.0</quarkus.platform.version>
         <skipITs>true</skipITs>
         <surefire-plugin.version>3.5.3</surefire-plugin.version>
+        <release-plugin.version>3.1.1</release-plugin.version>
+        <gpg-plugin.version>3.2.7</gpg-plugin.version>
+        <javadoc-plugin.version>3.11.2</javadoc-plugin.version>
+        <central-publishing-plugin.version>0.7.0</central-publishing-plugin.version>
         <!-- Default properties -->
         <maven.compiler.parameters>true</maven.compiler.parameters>
         <maven.compiler.release>17</maven.compiler.release>
@@ -112,22 +116,30 @@
     </dependencies>
 
     <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>${quarkus.platform.group-id}</groupId>
+                    <artifactId>quarkus-maven-plugin</artifactId>
+                    <version>${quarkus.platform.version}</version>
+                    <extensions>true</extensions>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>build</goal>
+                                <goal>generate-code</goal>
+                                <goal>generate-code-tests</goal>
+                                <goal>native-image-agent</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
         <plugins>
             <plugin>
                 <groupId>${quarkus.platform.group-id}</groupId>
                 <artifactId>quarkus-maven-plugin</artifactId>
-                <version>${quarkus.platform.version}</version>
-                <extensions>true</extensions>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>build</goal>
-                            <goal>generate-code</goal>
-                            <goal>generate-code-tests</goal>
-                            <goal>native-image-agent</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -177,7 +189,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
-                <version>3.1.1</version>
+                <version>${release-plugin.version}</version>
                 <configuration>
                     <pushChanges>false</pushChanges>
                     <tagNameFormat>v@{project.version}</tagNameFormat>
@@ -200,22 +212,6 @@
         </license>
     </licenses>
 
-    <distributionManagement>
-        <!--
-        <snapshotRepository>
-            <id>github-snapshot</id>
-            <url>https://maven.pkg.github.com/yuokada/quarkus-application-base</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </snapshotRepository>
-        -->
-        <repository>
-            <id>github</id>
-            <url>https://maven.pkg.github.com/yuokada/quarkus-application-base</url>
-        </repository>
-    </distributionManagement>
-
     <profiles>
         <profile>
             <id>native</id>
@@ -237,7 +233,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
-                        <version>3.11.2</version>
+                        <version>${javadoc-plugin.version}</version>
                         <executions>
                             <execution>
                                 <goals>
@@ -250,7 +246,7 @@
                     <plugin>
                         <groupId>org.sonatype.central</groupId>
                         <artifactId>central-publishing-maven-plugin</artifactId>
-                        <version>0.7.0</version>
+                        <version>${central-publishing-plugin.version}</version>
                         <extensions>true</extensions>
                         <configuration>
                             <publishingServerId>central</publishingServerId>
@@ -261,7 +257,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-gpg-plugin</artifactId>
-                        <version>3.2.7</version>
+                        <version>${gpg-plugin.version}</version>
                         <configuration>
                             <gpgArguments>
                                 <arg>--pinentry-mode</arg>
