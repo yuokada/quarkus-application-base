@@ -1,4 +1,7 @@
 # Quarkus Application Base
+[![Maven Central Version](https://img.shields.io/maven-central/v/io.github.yuokada/quarkus-application-base)](https://central.sonatype.com/artifact/io.github.yuokada/quarkus-application-base)
+
+
 
 **Quarkus Application Base** is a foundational Maven parent POM that streamlines the development of Quarkus applications. 
 It centralizes dependency and plugin management, enforces consistent configurations, and promotes best practices across multiple projects.
