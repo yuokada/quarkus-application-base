@@ -6,6 +6,10 @@
     <version>5-SNAPSHOT</version>
     <packaging>pom</packaging>
 
+    <name>${project.groupId}:${project.artifactId}</name>
+    <description>Quarkus application base for private use</description>
+    <url>https://github.com/yuokada/quarkus-application-base</url>
+
     <developers>
         <developer>
             <id>yuokada</id>
@@ -188,6 +192,13 @@
         <developerConnection>scm:git:git@github.com:yuokada/quarkus-application-base.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>http://www.opensource.org/licenses/mit-license.php</url>
+        </license>
+    </licenses>
 
     <distributionManagement>
         <!--
