@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.yuokada.quarkus</groupId>
     <artifactId>quarkus-application-base</artifactId>
-    <version>4</version>
+    <version>5-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <developers>
@@ -186,7 +186,7 @@
         <url>https://github.com/yuokada/quarkus-application-base</url>
         <connection>scm:git:git@github.com:yuokada/quarkus-application-base.git</connection>
         <developerConnection>scm:git:git@github.com:yuokada/quarkus-application-base.git</developerConnection>
-        <tag>v4</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <distributionManagement>
