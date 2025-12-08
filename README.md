@@ -3,7 +3,7 @@
 
 
 
-**Quarkus Application Base** is a foundational Maven parent POM that streamlines the development of Quarkus applications. 
+**Quarkus Application Base** is a foundational Maven parent POM that streamlines the development of Quarkus applications.
 It centralizes dependency and plugin management, enforces consistent configurations, and promotes best practices across multiple projects.
 
 ## Usage
@@ -49,4 +49,15 @@ This project is licensed under the [MIT License](LICENSE).
 
 ---
 
-Feel free to modify this `README.md` to better suit your project's specifics or to add more detailed instructions as needed. 
+Feel free to modify this `README.md` to better suit your project's specifics or to add more detailed instructions as needed.
+
+## For me
+
+### How to release
+
+`maven-release-plugin` is used to release a new version. Please execute the following commands to release.
+
+```shell
+$ ./mvnw clean release:clean release:prepare
+$ git push --follow-tags
+```
